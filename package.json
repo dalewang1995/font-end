@@ -1,0 +1,25 @@
+{
+  "name": "font-end",
+  "version": "1.0.0",
+  "description": "生活有的时候尝试慢下来也是一种享受，工作也是这样，来新工作环境三个月了，感悟很多，我以后会尝试记录下来的，不管是技术还是生活。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dalewang1995/font-end.git"
+  },
+  "author": "汪小鱼",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dalewang1995/font-end/issues"
+  },
+  "homepage": "https://github.com/dalewang1995/font-end#readme",
+  "devDependencies": {
+    "webpack": "^4.16.1",
+    "webpack-command": "^0.4.1",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-serve": "^2.0.2"
+  }
+}
