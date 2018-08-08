@@ -49,14 +49,28 @@ body {
 </style>
 
 <style>
+  /* 作用在容器上的属性6个 */
+  /*flex-direction 主轴方向
+    flex-wrap 换行处理
+    flex-flow 
+    justify-content 水平方向
+    align-items 垂直方向
+    align-content 多根轴线*/
+
+    /* flex-flow : <flex-direction> || <flex-wrap>; */
   .first-face {
     display: flex;
-    justify-content: center;
-    align-items: center; 
+    flex-wrap:wrap-reverse;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 </style>
 <body>
   <div class="first-face">
+    <span class="pip"></span>
+    <span class="pip"></span>
+    <span class="pip"></span>
+    <span class="pip"></span>
     <span class="pip"></span>
 </div>
 </body>
