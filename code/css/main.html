@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+.border-one {
+
+}
+.border-one::after {
+  display: block;
+  content: '';
+  border-bottom: 1px solid black;
+  transform: scaleY(.5);
+}
+
+.border-two {
+  border-bottom: 1px solid black;
+}
+
+.border-three::after{
+  display: block;
+  content: '';
+  height: 1px;
+  background: linear-gradient(0, #fff, #000);
+
+}
+
+.border-four {
+  box-shadow: 0 0.5px 0 0 #000;
+}
+
+.border-five::after {
+    display: block;
+    content: '';
+    height: 1px;
+    background-image: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="1px"><line x1="0" y1="0" x2="100%" y2="0" stroke="#000"></line></svg>');
+}
+
+</style>
+<body>
+  <div class="border-one">
+    使用伪类+scale 实现
+  </div>
+  <br>
+  <div class="border-two">
+    未处理过的1px
+  </div>
+
+  <div class="border-three">
+    linear-gradient 实现
+  </div>
+  <div class="border-four">
+    box-shadow 实现
+  </div>
+
+
+  <div class="border-five">
+    svg
+  </div>
+</body>
+</html>
