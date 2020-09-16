@@ -48,3 +48,33 @@ Promise.prototype.finally = function(callback){
 }
 
 ```
+
+### Promise.all
+
+- 方法返回一个 Promise 实例
+- 参数为一个可迭代对象
+- 所有promise都执行完成（resolved）,执行回调完成（resolve）
+- 有一个失败就返回（reject）
+- 返回的成功结果是有顺序的，失败返回的是第一个失败的原因
+
+```js
+all(list){
+   
+    return new Promise((resolve,reject)=>{
+        let resValues = []
+        let counts = 0
+        for(let [i,p] of list){
+            resolve(p).then(res => {
+                    counts++;
+                    resValues[i] = res;
+                    if (counts === list.length) {
+                        resolve(resValues)
+                    }
+            , err => {
+                    reject(err)
+                })
+        }
+    })
+}
+
+```
