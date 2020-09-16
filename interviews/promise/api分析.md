@@ -27,3 +27,24 @@ console.log('script end')
 - promise1 是 pending: 这个 task 就会放入 事件循环的未来的某个(可能下一个)回合的 microtask queue 中
 
 - setTimeout 的回调也是个 task ，它会被放入 macrotask queue 即使是 0ms 的情况
+
+
+### Promise.finally 
+
+- 返回一个Promise
+- 无论结果是fulfilled或者是rejected，都会执行指定的回调函数
+- finally 不代表最后执行
+
+代码实现
+
+```js
+Promise.prototype.finally = function(callback){
+    let P = this.constructor // Promise
+    // callback 一定会执行
+    return this.then(
+        value  => P.resolve(callback()).then(() => value),
+        reason => P.resolve(callback()).then(() => { throw reason })
+    )
+}
+
+```
