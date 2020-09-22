@@ -78,3 +78,18 @@ all(list){
 }
 
 ```
+
+### Promise.race
+
+- 参数为一个可迭代对象
+- 方法返回一个 promise
+- 一旦迭代器中的某个promise解决或拒绝，返回的 promise就会解决或拒绝。
+
+```js
+Promise._race = promises => new Promise((resolve, reject) => {
+	promises.forEach(promise => {
+		promise.then(resolve, reject)
+	})
+})
+
+```
